@@ -25,8 +25,8 @@ This is my first attempt at coding with an AI assistant, as the site's structure
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/eleventy-solo-blog.git
-   cd eleventy-solo-blog
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
    ```
 
 2. Install dependencies:
@@ -44,7 +44,7 @@ This is my first attempt at coding with an AI assistant, as the site's structure
 ## Project Structure
 
 ```
-eleventy-solo-blog/
+/
 ├── src/                  # Source files
 │   ├── _data/            # Global data files
 │   │   └── site.json     # Site configuration
