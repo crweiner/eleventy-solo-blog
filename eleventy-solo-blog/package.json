@@ -1,0 +1,32 @@
+{
+  "name": "chandler-weiner-blog",
+  "version": "1.0.0",
+  "description": "Chandler Weiner's personal blog built with Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site",
+    "debug": "DEBUG=* eleventy",
+    "serve:prod": "eleventy && npx serve _site"
+  },
+  "keywords": [
+    "eleventy",
+    "blog",
+    "static-site",
+    "netlify"
+  ],
+  "author": "Chandler Weiner",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^6.0.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "eleventy-plugin-embed-everything": "^1.20.0",
+    "eleventy-plugin-external-links": "^1.1.2",
+    "eleventy-plugin-seo": "^0.5.2"
+  }
+}

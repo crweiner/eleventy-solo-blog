@@ -1,0 +1,12 @@
+{
+  "title": "Chandler Weiner",
+  "description": "Scientist, Techie, Tea Lover, and Traveler",
+  "url": "https://chandlerweiner.com",
+  "author": "Chandler Weiner",
+  "email": "your.email@example.com",
+  "year": "2025",
+  "social": {
+    "twitter": "https://twitter.com/c_dubbs",
+    "github": "https://github.com/crweiner/"
+  }
+}

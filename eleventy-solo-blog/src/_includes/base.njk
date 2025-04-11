@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  {# SEO Plugin #}
+  {% seo "" %}
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  {# Syntax Highlighting CSS #}
+  <style>
+    /* Syntax Highlighting - Prism.js Theme */
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: #f8f8f2;
+      background: none;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.5;
+      tab-size: 4;
+      hyphens: none;
+    }
+    
+    pre[class*="language-"] {
+      padding: 1em;
+      margin: .5em 0;
+      overflow: auto;
+      border-radius: 0.3em;
+    }
+    
+    :not(pre) > code[class*="language-"],
+    pre[class*="language-"] {
+      background: #2d2d2d;
+    }
+    
+    :not(pre) > code[class*="language-"] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+    }
+    
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+      color: #8292a2;
+    }
+    
+    .token.punctuation {
+      color: #f8f8f2;
+    }
+    
+    .token.namespace {
+      opacity: .7;
+    }
+    
+    .token.property,
+    .token.tag,
+    .token.constant,
+    .token.symbol,
+    .token.deleted {
+      color: #f92672;
+    }
+    
+    .token.boolean,
+    .token.number {
+      color: #ae81ff;
+    }
+    
+    .token.selector,
+    .token.attr-name,
+    .token.string,
+    .token.char,
+    .token.builtin,
+    .token.inserted {
+      color: #a6e22e;
+    }
+    
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string,
+    .token.variable {
+      color: #f8f8f2;
+    }
+    
+    .token.atrule,
+    .token.attr-value,
+    .token.function,
+    .token.class-name {
+      color: #e6db74;
+    }
+    
+    .token.keyword {
+      color: #66d9ef;
+    }
+    
+    .token.regex,
+    .token.important {
+      color: #fd971f;
+    }
+    
+    .token.important,
+    .token.bold {
+      font-weight: bold;
+    }
+    
+    .token.italic {
+      font-style: italic;
+    }
+    
+    .token.entity {
+      cursor: help;
+    }
+  </style>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  {# RSS Feed #}
+  <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/aboutme/">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      {{ content | safe }}
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; {{ site.year }} {{ site.title }}. All rights reserved. 
+        <a href="/feed.xml" title="RSS Feed" class="rss-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rss-icon">
+            <path d="M4 11a9 9 0 0 1 9 9"></path>
+            <path d="M4 4a16 16 0 0 1 16 16"></path>
+            <circle cx="5" cy="19" r="1"></circle>
+          </svg>
+          <span class="rss-text">RSS</span>
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

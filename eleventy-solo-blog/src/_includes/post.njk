@@ -1,0 +1,26 @@
+---
+layout: base.njk
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1>{{ title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ date | w3DateFilter }}">{{ date | readableDate }}</time>
+    </div>
+  </header>
+
+  {% if featured_image %}
+  <div class="featured-image">
+    <img src="{{ featured_image }}" alt="{{ title }}">
+  </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <p><a href="/blog/">&larr; Back to all posts</a></p>
+  </footer>
+</article>
