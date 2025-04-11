@@ -1,6 +1,6 @@
 # Chandler Weiner's Blog
 
-A personal blog built with [Eleventy](https://www.11ty.dev/), a lightweight static site generator.
+A personal blog built with [Eleventy](https://www.11ty.dev/), a lightweight static site generator. Made to try and mimic the [Solo theme by Ghost](https://github.com/TryGhost/Solo).
 
 This is my first attempt at coding with an AI assistant, as the site's structure was built using Cline and Anthropic's Claud 3.7 Sonnet.
 
