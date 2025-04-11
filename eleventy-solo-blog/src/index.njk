@@ -27,6 +27,13 @@ description: Welcome to my Eleventy blog
     <ul class="post-list">
       {% for post in collections.posts | reverse | limit(3) %}
         <li class="post-item">
+          {% if post.data.featured_image %}
+          <div class="post-image">
+            <a href="{{ post.url }}">
+              <img src="{{ post.data.featured_image }}" alt="{{ post.data.title }}">
+            </a>
+          </div>
+          {% endif %}
           <div class="post-content-wrapper">
             <h3 class="post-title">
               <a href="{{ post.url }}">{{ post.data.title }}</a>
@@ -41,18 +48,11 @@ description: Welcome to my Eleventy blog
             {% endif %}
             <a href="{{ post.url }}" class="read-more">Continue reading →</a>
           </div>
-          {% if post.data.featured_image %}
-          <div class="post-image">
-            <a href="{{ post.url }}">
-              <img src="{{ post.data.featured_image }}" alt="{{ post.data.title }}">
-            </a>
-          </div>
-          {% endif %}
         </li>
       {% endfor %}
     </ul>
     
-    <p style="text-align: center; margin-top: 5rem;"><a href="/blog/">View all articles</a></p>
+    <p style="text-align: left; margin-top: 5rem;"><a href="/blog/">View all articles →</a></p>
   {% else %}
     <p>No posts yet. Check back soon!</p>
   {% endif %}
