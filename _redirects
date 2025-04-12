@@ -1,0 +1,2 @@
+# Redirect /about/ to /aboutme/ for backward compatibility
+/about/  /aboutme/  301

@@ -44,7 +44,7 @@ This is my first attempt at coding with an AI assistant, as the site's structure
 ## Project Structure
 
 ```
-eleventy-solo-blog/
+/
 ├── src/                  # Source files
 │   ├── _data/            # Global data files
 │   │   └── site.json     # Site configuration
@@ -64,6 +64,13 @@ eleventy-solo-blog/
 ├── .eleventy.js          # Eleventy configuration
 ├── .gitignore            # Git ignore file
 ├── netlify.toml          # Netlify configuration
+├── _headers              # HTTP headers for Cloudflare Pages
+├── _redirects            # URL redirects for Cloudflare Pages
+├── _routes.json          # Routing configuration for Cloudflare Pages
+├── _worker.js            # Edge functions for Cloudflare Pages
+├── wrangler.toml         # Wrangler CLI configuration
+├── pages.json            # Cloudflare Pages configuration
+├── .cfignore             # Cloudflare Pages ignore file
 ├── package.json          # Project dependencies
 └── README.md             # Project documentation
 ```
@@ -72,10 +79,12 @@ eleventy-solo-blog/
 
 The following files and directories are excluded in the `.gitignore` file and should not be committed to your Git repository:
 
-- `_site/` - The build output directory (Netlify will generate this)
-- `node_modules/` - Node.js dependencies (Netlify will install these)
+- `_site/` - The build output directory (generated during build)
+- `node_modules/` - Node.js dependencies (installed via npm)
 - `.cache/` and `.eleventy.cache/` - Cache directories
 - `.netlify/` - Netlify local development files
+- `.wrangler/`, `.cloudflare/`, `.cf/` - Cloudflare local development files
+- Environment variables (`.env`, `.env.local`, etc.)
 - Various editor and OS-specific files (`.DS_Store`, `.vscode/`, etc.)
 
 ## Building for Production
@@ -88,11 +97,15 @@ npm run build
 
 This will generate the static site in the `_site` directory, which can be deployed to any static hosting service.
 
-## Deploying to Netlify
+## Deployment Options
+
+This project is configured for seamless deployment to both Netlify and Cloudflare Pages.
+
+### Deploying to Netlify
 
 This project is configured for seamless deployment to Netlify using the included `netlify.toml` file.
 
-### Deployment Steps
+#### Netlify Deployment Steps
 
 1. Push your repository to GitHub.
 2. Log in to [Netlify](https://www.netlify.com/).
@@ -108,14 +121,47 @@ That's it! Netlify will automatically build and deploy your site whenever you pu
 - Cache control
 - Custom redirects
 
-### Manual Deployment (Optional)
+#### Netlify Manual Deployment (Optional)
 
-If you prefer to deploy manually:
+If you prefer to deploy manually to Netlify:
 
 1. Build your site: `npm run build`
 2. Install the Netlify CLI: `npm install -g netlify-cli`
 3. Log in to Netlify: `netlify login`
 4. Deploy the site: `netlify deploy --prod --dir=_site`
+
+### Deploying to Cloudflare Pages
+
+This project is also configured for deployment to Cloudflare Pages using the included configuration files.
+
+#### Cloudflare Pages Deployment Steps
+
+1. Push your repository to GitHub.
+2. Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/).
+3. Navigate to Pages and click "Create a project".
+4. Select your GitHub repository.
+5. Configure your project with the following settings:
+   - Build command: `npm run build`
+   - Build output directory: `_site`
+6. Click "Save and Deploy".
+
+Cloudflare Pages will automatically build and deploy your site whenever you push changes to your GitHub repository. The configuration files include:
+
+- `_headers`: Custom HTTP headers
+- `_redirects`: URL redirects
+- `_routes.json`: Routing configuration
+- `_worker.js`: Custom edge functions
+- `wrangler.toml`: Wrangler CLI configuration
+- `pages.json`: Cloudflare Pages configuration
+
+#### Cloudflare Pages Manual Deployment (Optional)
+
+If you prefer to deploy manually to Cloudflare Pages:
+
+1. Build your site: `npm run build`
+2. Install the Wrangler CLI: `npm install -g wrangler`
+3. Log in to Cloudflare: `wrangler login`
+4. Deploy the site: `wrangler pages publish _site`
 
 ## Customization
 

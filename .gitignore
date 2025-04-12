@@ -15,6 +15,11 @@
 .eleventy.cache/
 .netlify/
 
+# Cloudflare specific
+.wrangler/
+.cloudflare/
+.cf/
+
 # Environment variables
 .env
 .env.local

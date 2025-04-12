@@ -70,8 +70,20 @@ module.exports = function(eleventyConfig) {
   // Copy the assets directory to the output
   eleventyConfig.addPassthroughCopy("src/assets");
   
+  // Copy Cloudflare Pages configuration files to the output
+  eleventyConfig.addPassthroughCopy("_headers");
+  eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("_routes.json");
+  eleventyConfig.addPassthroughCopy("_worker.js");
+  
   // Watch for changes in the assets directory
   eleventyConfig.addWatchTarget("src/assets");
+  
+  // Watch for changes in Cloudflare Pages configuration files
+  eleventyConfig.addWatchTarget("_headers");
+  eleventyConfig.addWatchTarget("_redirects");
+  eleventyConfig.addWatchTarget("_routes.json");
+  eleventyConfig.addWatchTarget("_worker.js");
   
   // Configure the Sass plugin (if you decide to use it)
   // This would require additional setup with a plugin like eleventy-sass

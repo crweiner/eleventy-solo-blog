@@ -1,0 +1,21 @@
+name = "eleventy-blog"
+type = "webpack"
+account_id = ""  # Your Cloudflare account ID goes here
+workers_dev = true
+route = ""
+zone_id = ""  # Your Cloudflare zone ID goes here
+compatibility_date = "2023-10-30"
+
+[site]
+bucket = "_site"  # The directory where Eleventy outputs the built site
+entry-point = "_worker.js"  # The entry point for your Worker
+
+[build]
+command = "npm run build"  # The command to build your site
+upload.format = "service-worker"
+
+[build.upload]
+format = "service-worker"
+
+[env.production]
+workers_dev = false

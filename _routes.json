@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/assets/*",
+    "/_site/*",
+    "/_headers",
+    "/_redirects"
+  ]
+}
