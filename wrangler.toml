@@ -1,5 +1,4 @@
-name = "eleventy-blog"
-type = "webpack"
+name = "chandler-blog-v2"
 account_id = ""  # Your Cloudflare account ID goes here
 workers_dev = true
 route = ""
@@ -13,9 +12,6 @@ entry-point = "_worker.js"  # The entry point for your Worker
 [build]
 command = "npm run build"  # The command to build your site
 upload.format = "service-worker"
-
-[build.upload]
-format = "service-worker"
 
 [env.production]
 workers_dev = false
