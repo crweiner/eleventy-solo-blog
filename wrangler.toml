@@ -1,0 +1,5 @@
+name = "chandler-blog-v2"
+compatibility_date = "2025-04-12"
+
+[site]
+bucket = "_site"
