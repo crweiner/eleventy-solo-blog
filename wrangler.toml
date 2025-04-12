@@ -15,3 +15,6 @@ upload.format = "service-worker"
 
 [env.production]
 workers_dev = false
+
+[observability.logs]
+enabled = true
