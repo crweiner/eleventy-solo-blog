@@ -67,7 +67,6 @@ This is my first attempt at coding with an AI assistant, as the site's structure
 ├── _headers              # HTTP headers for Cloudflare Pages
 ├── _redirects            # URL redirects for Cloudflare Pages
 ├── _routes.json          # Routing configuration for Cloudflare Pages
-├── _worker.js            # Edge functions for Cloudflare Pages
 ├── wrangler.toml         # Wrangler CLI configuration
 ├── pages.json            # Cloudflare Pages configuration
 ├── .cfignore             # Cloudflare Pages ignore file
@@ -150,7 +149,6 @@ Cloudflare Pages will automatically build and deploy your site whenever you push
 - `_headers`: Custom HTTP headers
 - `_redirects`: URL redirects
 - `_routes.json`: Routing configuration
-- `_worker.js`: Custom edge functions
 - `wrangler.toml`: Wrangler CLI configuration
 - `pages.json`: Cloudflare Pages configuration
 
@@ -161,7 +159,7 @@ If you prefer to deploy manually to Cloudflare Pages:
 1. Build your site: `npm run build`
 2. Install the Wrangler CLI: `npm install -g wrangler`
 3. Log in to Cloudflare: `wrangler login`
-4. Deploy the site: `wrangler pages publish _site`
+4. Deploy the site: `wrangler pages deploy _site`
 
 ## Customization
 

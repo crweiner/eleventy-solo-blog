@@ -74,7 +74,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_headers");
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("_routes.json");
-  eleventyConfig.addPassthroughCopy("_worker.js");
   
   // Watch for changes in the assets directory
   eleventyConfig.addWatchTarget("src/assets");
@@ -83,7 +82,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("_headers");
   eleventyConfig.addWatchTarget("_redirects");
   eleventyConfig.addWatchTarget("_routes.json");
-  eleventyConfig.addWatchTarget("_worker.js");
   
   // Configure the Sass plugin (if you decide to use it)
   // This would require additional setup with a plugin like eleventy-sass
