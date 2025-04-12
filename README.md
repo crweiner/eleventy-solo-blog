@@ -67,7 +67,7 @@ This is my first attempt at coding with an AI assistant, as the site's structure
 ├── _headers              # HTTP headers for Cloudflare Pages
 ├── _redirects            # URL redirects for Cloudflare Pages
 ├── _routes.json          # Routing configuration for Cloudflare Pages
-├── wrangler.toml         # Minimal Wrangler configuration for Cloudflare Pages
+├── wrangler.toml         # Cloudflare Pages configuration
 ├── pages.json            # Cloudflare Pages configuration
 ├── .cfignore             # Cloudflare Pages ignore file
 ├── package.json          # Project dependencies
@@ -149,7 +149,7 @@ Cloudflare Pages will automatically build and deploy your site whenever you push
 - `_headers`: Custom HTTP headers
 - `_redirects`: URL redirects
 - `_routes.json`: Routing configuration
-- `wrangler.toml`: Minimal Wrangler configuration for Cloudflare Pages
+- `wrangler.toml`: Cloudflare Pages configuration
 - `pages.json`: Cloudflare Pages configuration
 
 #### Cloudflare Pages Manual Deployment (Optional)

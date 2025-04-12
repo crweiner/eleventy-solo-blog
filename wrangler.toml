@@ -1,9 +1,5 @@
 name = "chandler-blog-v2"
 compatibility_date = "2025-04-12"
-main = "workers-site/index.js"
 
 # Cloudflare Pages configuration
 pages_build_output_dir = "_site"
-
-[site]
-bucket = "_site"
