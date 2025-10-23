@@ -5,17 +5,30 @@ description: Welcome to my Eleventy blog
 ---
 
 <section class="hero">
-  <div class="profile-container">
-    <div class="profile-image">
+  <div class="hero-container">
+    <div class="hero-image">
       <img src="/assets/images/chandler-weiner.jpg" alt="Chandler Weiner">
     </div>
-    <div class="profile-content">
-      <h1>{{ site.title }}</h1>
-      <p>{{ site.description }}</p>
+    <div class="hero-content">
+      <h1>Hey there 👋 I'm {{ site.title }}, a {{ site.description | lower }}</h1>
+      <p>Showcase your work to your growing audience. Readers can subscribe below to receive the latest posts directly in their inbox 📬</p>
       <div class="profile-bio">
         <p>Welcome to my personal blog! I share my thoughts on technology, science, travel, and occasionally my love for tea.</p>
         <p>Check out my <a href="{{ site.social.github }}">GitHub</a> and <a href="{{ site.social.twitter }}">Twitter</a> to connect with me.</p>
       </div>
+
+      <!-- Email Subscription Form -->
+      <form class="subscribe-form" data-netlify="true" name="subscribe" method="POST" action="/thank-you">
+        <input type="hidden" name="form-name" value="subscribe">
+        <div class="form-group">
+          <input type="email" name="email" id="email" placeholder="jamie@example.com" required>
+          <button type="submit" class="subscribe-button">
+            <span class="subscribe-icon">📮</span>
+            Subscribe
+          </button>
+        </div>
+        <p class="form-note">No spam, unsubscribe at any time.</p>
+      </form>
     </div>
   </div>
 </section>
