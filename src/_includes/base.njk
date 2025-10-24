@@ -123,7 +123,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   {# RSS Feed #}
   <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
@@ -131,12 +131,30 @@
 <body>
   <header>
     <div class="container">
-      <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
-      <nav>
+      <div class="header-inner">
+        <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/aboutme/">About</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="#subscribe" class="subscribe-btn">Subscribe</a>
+          <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="nav-mobile">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/aboutme/">About</a></li>
+          <li><a href="#subscribe" class="mobile-subscribe-link">Subscribe</a></li>
         </ul>
       </nav>
     </div>
@@ -150,7 +168,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; {{ site.year }} {{ site.title }}. All rights reserved. 
+      <p>&copy; {{ site.year }} {{ site.title }}. All rights reserved.
         <a href="/feed.xml" title="RSS Feed" class="rss-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rss-icon">
             <path d="M4 11a9 9 0 0 1 9 9"></path>
@@ -162,5 +180,64 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileNav = document.querySelector('.nav-mobile');
+      const body = document.body;
+
+      if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+          const isOpen = mobileNav.style.display === 'block';
+
+          if (isOpen) {
+            mobileNav.style.display = 'none';
+            mobileMenuToggle.classList.remove('active');
+            body.style.overflow = '';
+          } else {
+            mobileNav.style.display = 'block';
+            mobileMenuToggle.classList.add('active');
+            body.style.overflow = 'hidden';
+          }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileNav.style.display = 'none';
+            mobileMenuToggle.classList.remove('active');
+            body.style.overflow = '';
+          });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!mobileMenuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+            mobileNav.style.display = 'none';
+            mobileMenuToggle.classList.remove('active');
+            body.style.overflow = '';
+          }
+        });
+      }
+
+      // Smooth scroll for subscribe links
+      const subscribeLinks = document.querySelectorAll('a[href="#subscribe"]');
+      subscribeLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const subscribeSection = document.querySelector('#subscribe');
+          if (subscribeSection) {
+            subscribeSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
